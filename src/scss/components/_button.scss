@@ -1,6 +1,6 @@
 .btn {
-    &:link,
-        &:visited {
+  &:link,
+  &:visited {
     text-transform: uppercase;
     text-decoration: none;
     padding: 1.5rem 4rem;
@@ -9,31 +9,39 @@
     transition: all 0.2s;
     position: relative;
     font-size: $default-font-size;
-    }
+  }
 
-    &:hover {
+  &:hover {
     transform: translateY(-0.3rem);
-    box-shadow: 0 1rem 2rem rgba($color-black, .2);
-        &::after {
-            transform: scaleX(1.4) scaleY(1.6);
-            opacity: 0;
-        }
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
     }
+  }
 
-    &:active {
+  &:active {
     transform: translateY(-0.1rem);
-    box-shadow: 0 0.5rem 1rem rgba($color-black, .2);
-    }
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
 
-    &--white {
+  &--white {
     background-color: $color-white;
     color: $color-grey-dark;
-        &::after {
-        background-color: $color-white;
-    }
-}
-
     &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+    &::after {
+      background-color: $color-primary;
+    }
+  }
+
+  &::after {
     content: "";
     display: inline-block;
     height: 100%;
@@ -44,35 +52,34 @@
     left: 0;
     z-index: -1;
     transition: all 0.4s;
-    }
-    &--animated {
+  }
+  &--animated {
     animation: moveInBottom 0.5s ease-out 0.75s;
     animation-fill-mode: backwards;
-    }
-    
+  }
 }
 
 .bt-text {
-    &:link,
-    &:visited {
+  &:link,
+  &:visited {
     font-size: $default-font-size;
     color: $color-primary;
     display: inline-block;
     text-decoration: none;
     border-bottom: 1px solid $color-primary; // Again Why not .rem? well, two pixels is just a small thing it doesn't really matter, they are not going to change sizes, if the user decide to change the base font size.
     padding: 3px; // Again Why not .rem? well, two pixels is just a small thing it doesn't really matter, they are not going to change sizes, if the user decide to change the base font size.
-    transition: all .2s;
-    }
+    transition: all 0.2s;
+  }
 
-    &:hover {
-        background-color: $color-primary;
-        color: $color-white;
-        box-shadow: 0 1rem 2rem rgba($color-black, .15);
-        transform: translateY(-2px);
-    }
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    transform: translateY(-2px);
+  }
 
-    &:active {
-        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
-        transform: translateY(0);
-    }
+  &:active {
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.15);
+    transform: translateY(0);
+  }
 }
