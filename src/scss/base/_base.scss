@@ -12,19 +12,21 @@ html {
   /*with this now 10px = 1rem */
   /* note that we could have used ems instead of rems but that is a whole lot of work, because it is difficult to make, because the ems depend not on the root font size but on the font size of the parent Element and with that you have to do a lot of calculations and it becomes really difficult to mange.  */
 
-  //   @include respond(tab-land) {
-  //     // width < 1200?
-  //     font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
-  //   }
+  // Media Query
 
-  //     @include respond(tab-port) {
-  //       // width < 900?
-  //       font-size: 50%; //1 rem = 8px, 8/16 = 50%
-  //     }
+  @include respond(tab-land) {
+    // width < 1200px
+    font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+  }
 
-  //     @include respond(big-desktop) {
-  //       font-size: 75%; //1rem = 12, 12/16
-  //     }
+  @include respond(tab-port) {
+    // width < 900px
+    font-size: 50%; //1 rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12, 12/16
+  }
 }
 
 body {
