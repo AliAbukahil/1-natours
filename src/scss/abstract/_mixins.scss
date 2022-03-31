@@ -22,39 +22,188 @@
 [1200 - 1800]  is where our normal style apply
 1800px + :   Big Desktop
 
-$breakpoints argument points
+$breakpoints argument choices: 
 => phone
-=> tab-port
-=> tab-land
+=> tab-port === InCaseYou'reConfusedItMeans => Tablet portrait
+=> tab-land === InCaseYou'reConfusedItMeans => Tablet landscape
 => big-desktop
 */
 
+// This the order in which I should write the Media Query.
 // ORDER: Base + Typography > general layout + grid > page layout > components
 
 // 1em === 16px
 @mixin respond($breakpoints) {
   @if $breakpoints == phone {
     @media (max-width: 37.5em) {
-      // 600px
+      // 600px / 16px = 37.5em
       @content;
     }
   }
   @if $breakpoints == tab-port {
     @media (max-width: 56.25em) {
-      //  900px
+      //  900px / 16px = 56.25em
       @content;
     }
   }
   @if $breakpoints == tab-land {
     @media (max-width: 75em) {
-      // 1200px
+      // 1200px / 16px = 75em
       @content;
     }
   }
   @if $breakpoints == big-desktop {
     @media (min-width: 112.5em) {
-      // 1800px
+      /* 💥 NOTE this one min(minimum) not max(maximum), cuz the minimum
+      width at which this will occur is 1800 pixels & if it's more, it will happen & if it's less then it not going to happen 😃
+      */
+
+      // 1800px / 16px = 112.5em
       @content;
     }
   }
 }
+
+//😃 in case you come in the future for a future Project just copy the @mixin respond($breakpoints){} with all inside 4 breakpoints in your _mixins.scss file and start including the mixin  @include respond(big-desktop) {} where ever you please in your future Project 😃
+
+/*
+💥Explanation💥of💥pixels💥rem💥&💥em
+
+We've been talking about pixels here all this time now,
+
+
+but such as in the rest of the page, we're actually not
+
+
+
+gonna to use pixels in the media queries here.
+
+
+
+That's because if the user changes the default font size
+
+
+
+in the browser, then the media queries
+
+
+
+would not be affected by that.
+
+
+
+However, we want them to be affected, so just like before,
+
+
+
+we use pixels simply to understand what's going on here,
+
+
+
+but we then use a relative unit
+
+
+
+that is in the end going to convert to pixel.
+
+
+
+About rems and ems, there's an important particularity
+
+
+
+about them in media queries.
+
+
+
+That's because ems and rems in media queries,
+
+
+they are not affected by a root font size setting,
+
+
+
+by this setting here. => font-size: 56.25%;
+
+
+
+They are simply not affected by what we do here
+
+
+
+in the root font size setting.
+
+
+
+What that means is that one rem or one em
+
+
+
+in a media query is always just equal to the font size
+
+
+
+which is coming from the browser,
+
+
+
+and that's by default is 16 pixels,
+
+
+
+but if the user changes it to 20 pixels,
+
+
+
+then it will be 20 pixels no matter what we have
+
+
+
+in our base font definition.
+
+
+
+What we're going to use here is ems and not rems,
+
+
+
+because rems fail to work as intended
+
+
+
+in some of the browsers.
+
+
+
+There's been some experiments done by people who understand
+
+
+
+a lot of all of this, and the conclusion basically
+
+
+
+is that ems are the best option for media queries.
+
+
+
+That's what we're going to do here.
+
+
+
+Keeping in mind that one em is 16 pixels,
+
+
+
+let's now convert all of these here.
+
+
+
+Basically, we say 600 divided by 16.
+
+
+00:17:47,449  -->  00:17:49,616
+So, we end up with 37.5em.
+
+
+*/

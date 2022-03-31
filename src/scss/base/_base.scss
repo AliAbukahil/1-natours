@@ -9,23 +9,31 @@
 html {
   font-size: 62.5%;
   // This defines what 1 rem is
-  /*with this now 10px = 1rem */
+  /*with this now 1rem = 10px  */
   /* note that we could have used ems instead of rems but that is a whole lot of work, because it is difficult to make, because the ems depend not on the root font size but on the font size of the parent Element and with that you have to do a lot of calculations and it becomes really difficult to mange.  */
 
   // Media Query
 
+  //💥 if I want (1rem to be 8px) 1 rem = 8px, 8/16 = 50% note that (by default is 16 pixels)
+
   @include respond(tab-land) {
-    // width < 1200px
-    font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+    // width < 1200px ?
+    font-size: 56.25%; //1 rem = 9px, 9/16 = 56.25%
   }
 
   @include respond(tab-port) {
-    // width < 900px
+    // width < 900px ?
     font-size: 50%; //1 rem = 8px, 8/16 = 50%
   }
 
+  // @include respond(phone) {
+  //   // width < 600px ?
+  //   font-size: 30%; //1 rem = 4.8px, 4.8/16 = 30%
+  // }
+
   @include respond(big-desktop) {
-    font-size: 75%; //1rem = 12, 12/16
+    // width > 1800px ?
+    font-size: 75%; //1rem = 12, 12/16 = 75%
   }
 }
 
