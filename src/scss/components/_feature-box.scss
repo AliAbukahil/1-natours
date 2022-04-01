@@ -6,6 +6,11 @@
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
   transition: transform 0.3s;
+
+  @include respond(tab-port) {
+    padding: 2rem;
+  }
+
   &__icon {
     font-size: 6rem;
     margin-bottom: 0.5rem;
@@ -17,6 +22,10 @@
     );
     -webkit-background-clip: text; // and so what happened now is that the background gets clipped exactly where the text is to the h2 text.
     color: transparent;
+
+    @include respond(tab-port) {
+      padding: 2rem;
+    }
   }
 
   &:hover {
