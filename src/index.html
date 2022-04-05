@@ -421,7 +421,31 @@
 
     <footer class="footer">
       <div class="footer__logo-box">
-        <img src="img/logo-green-2x.png" alt="Full logo" class="footer__logo" />
+        <!-- Art Direction => 💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥 -->
+        <!-- 💥 <picture>+<source />+<img/> to tell the browser to use one image on one screen
+          width and another image on another screen width 💥-->
+        <picture class="footer__logo">
+          <!-- <source/> srcset="" we set the image we want to render in case the width is lower
+            than what we specified in the media query media="(max-width: 37.5em)" 37.5em => 600px -->
+          <source
+            srcset="
+              img/logo-green-small-1x.png 1x,
+              img/logo-green-small-2x.png 2x
+            "
+            media="(max-width: 37.5em)"
+          />
+          <!--💥 srcset="" => This attribute here allows the browser to choose the best of those
+          two images here, according to the screen that is used by the user to display the 
+          webpage so if it's a low density screen, it will use this image here img/logo-green-1x.png becuse
+          we said that this image should be used for a low resolution screen x1 and when the device has a high resolution 
+          screenthen it will use this image because we said so with defining 2x density descriptor, 
+          the 1x and 2x are density descriptor 💥-->
+          <img
+            srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
+            alt="Full logo"
+          />
+        </picture>
+        <!-- 💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥 -->
       </div>
       <div class="row">
         <div class="col-1-of-2">

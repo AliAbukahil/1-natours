@@ -46,16 +46,13 @@
   &__img {
     display: block;
     width: 100%;
+    padding: 3rem 0 0 3rem;
 
     @include respond(tab-port) {
       position: relative;
-      top: 18rem;
+      top: 4.5rem;
       left: 2.5rem;
       margin-bottom: 7rem;
-      border-radius: 8px;
-    }
-    @include respond(tab-land) {
-      top: 3rem;
     }
   }
 
