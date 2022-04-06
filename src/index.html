@@ -103,6 +103,35 @@
 
           <div class="col-1-of-2">
             <div class="composition">
+              <!-- Responsive Images: Density and Resolution Switching 
+                src="img/nat-1-large.jpg" => for old browsers who don't support 
+                attributes such as srcset, sizes
+              -->
+              <img
+                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                sizes="(max-width: 900px) 17vw, (max-width: 600px) 25vw, 300px"
+                alt="Photo 1"
+                class="composition__photo composition__photo--p1"
+                src="img/nat-1-large.jpg"
+              />
+
+              <img
+                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                sizes="(max-width: 900px) 17vw, (max-width: 600px) 25vw, 300px"
+                alt="Photo 2"
+                class="composition__photo composition__photo--p2"
+                src="img/nat-2-large.jpg"
+              />
+
+              <img
+                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                sizes="(max-width: 900px) 17vw, (max-width: 600px) 25vw, 300px"
+                alt="Photo 3"
+                class="composition__photo composition__photo--p3"
+                src="img/nat-3-large.jpg"
+              />
+
+              <!--
               <img
                 src="img/nat-1-large.jpg"
                 alt="photo1"
@@ -116,6 +145,7 @@
                 alt="photo3"
                 class="composition__photo composition__photo--p3"
               />
+              -->
             </div>
           </div>
         </div>
@@ -298,11 +328,21 @@
         <div class="row">
           <div class="story">
             <figure class="story__shape">
-              <img
+              <!-- <img
                 src="./img/nat-8.jpg"
                 alt="Person on a tour"
                 class="story__img"
+              /> -->
+
+              <!-- Responsive Images: Density and Resolution Switching -->
+              <img
+                srcset="./img/nat-8-small.jpg 300w, ./img/nat-8.jpg 2000w"
+                sizes="(max-width: 900px) 28vw, (max-width: 600px) 42vw 315px"
+                alt="Person on a tour"
+                class="story__img"
+                src="./img/nat-8.jpg"
               />
+
               <figcaption class="story__caption">Mary Smith</figcaption>
             </figure>
             <div class="story__text">
@@ -323,11 +363,21 @@
         <div class="row">
           <div class="story">
             <figure class="story__shape">
-              <img
+              <!--               <img
                 src="./img/nat-9.jpg"
                 alt="Person on a tour"
                 class="story__img"
+              /> -->
+
+              <!-- Responsive Images: Density and Resolution Switching -->
+              <img
+                srcset="./img/nat-9-small.jpg 300w, ./img/nat-9.jpg 2000w"
+                sizes="(max-width: 600px) 40vw, (max-width: 900px) 27vw"
+                alt="Person on a tour"
+                class="story__img"
+                src="./img/nat-9.jpg"
               />
+
               <figcaption class="story__caption">Jack Wilson</figcaption>
             </figure>
             <div class="story__text">
@@ -421,7 +471,7 @@
 
     <footer class="footer">
       <div class="footer__logo-box">
-        <!-- Art Direction => 💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥 -->
+        <!-- Responsive Images: Art Direction => 💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥 -->
         <!-- 💥 <picture>+<source />+<img/> to tell the browser to use one image on one screen
           width and another image on another screen width 💥-->
         <picture class="footer__logo">
@@ -439,10 +489,12 @@
           webpage so if it's a low density screen, it will use this image here img/logo-green-1x.png becuse
           we said that this image should be used for a low resolution screen x1 and when the device has a high resolution 
           screenthen it will use this image because we said so with defining 2x density descriptor, 
-          the 1x and 2x are density descriptor 💥-->
+          the 1x and 2x are density descriptor 
+          💥-->
           <img
             srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
             alt="Full logo"
+            src="img/logo-green-2x.png"
           />
         </picture>
         <!-- 💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥 -->
@@ -497,8 +549,26 @@
     <div class="popup" id="popup">
       <div class="popup__content">
         <div class="popup__left">
+          <!-- 
           <img src="img/nat-8.jpg" alt="Tour Photo" class="popup__img" />
           <img src="img/nat-9.jpg" alt="Tour Photo" class="popup__img" />
+          -->
+
+          <!-- Responsive Images: Density and Resolution Switching -->
+          <img
+            srcset="./img/nat-8-small.jpg 300w, ./img/nat-8.jpg 2000w"
+            alt="Tour photo"
+            sizes="(max-width: 900px) 25vw (max-width: 600px) 24vw"
+            class="popup__img"
+            src="img/nat-8.jpg"
+          />
+          <img
+            srcset="./img/nat-9-small.jpg 300w, ./img/nat-9.jpg 2000w"
+            alt="Tour photo"
+            sizes="(max-width: 900px) 25vw (max-width: 600px) 24vw"
+            class="popup__img"
+            src="img/nat-9.jpg"
+          />
         </div>
         <div class="popup__right">
           <!-- this a element looking button is responsible for closing the popup -->
