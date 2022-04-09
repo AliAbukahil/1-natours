@@ -20,6 +20,16 @@
   transform: skewY(-7deg);
   margin-top: -10rem;
 
+  //  Responsive Images
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.8),
+        rgba($color-secondary-dark, 0.8)
+      ),
+      url("../img/hero.jpg");
+  }
+
   & > * {
     //a direct child selector! (> direct) (* means only applies to the row div inside the section-features not the divs after that!
     transform: skewY(7deg);
