@@ -46,6 +46,8 @@ body {
   }
 }
 
+// selections pseudo Element
+
 ::selection {
   background-color: $color-primary;
   color: $color-white;
