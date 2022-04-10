@@ -61,7 +61,7 @@ body {
   // letter-spacing: 0.2rem;
   // transition: all 0.2s;
 
-  @supports (-webkit-background-clip: text) {
+  @supports (-webkit-background-clip: text) or (color: transparent) {
     -webkit-background-clip: text;
     color: transparent;
     letter-spacing: 0.2rem;
